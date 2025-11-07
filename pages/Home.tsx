@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ProjectCard from '../components/ProjectCard';
+import CoreSkills from '../components/CoreSkills';
+import Connect from '../components/Connect';
 import { PROJECTS, PROFILE_IMAGE_URL } from '../constants';
 
 const Home: React.FC = () => {
@@ -45,6 +47,11 @@ const Home: React.FC = () => {
             ))}
           </div>
         </section>
+
+        <CoreSkills />
+
+        <Connect />
+
       </div>
     </div>
   );

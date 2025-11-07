@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -32,6 +32,7 @@ const pageTransition = {
 
 const AnimatedRoutes: React.FC = () => {
     const location = useLocation();
+
     return (
         <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
@@ -46,17 +47,23 @@ const AnimatedRoutes: React.FC = () => {
     );
 }
 
-const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-    <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={pageTransition}
-    >
-        {children}
-    </motion.div>
-);
+const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
+    return (
+        <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+            transition={pageTransition}
+        >
+            {children}
+        </motion.div>
+    );
+};
 
 const App: React.FC = () => {
   return (
