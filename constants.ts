@@ -1,3 +1,4 @@
+
 import { Project } from './types';
 
 export const CONTACT_INFO = {
@@ -61,6 +62,11 @@ export const PROJECTS: Project[] = [
         src: 'https://www.youtube.com/embed/as-NHBiSJ2o',
         thumbnail: 'https://i.postimg.cc/ZqP889J1/Whats-App-Image-2025-11-07-at-4-53-28-AM.jpg'
       },
+      {
+        type: 'video',
+        src: 'https://www.youtube.com/embed/zU1ifO2mjBg',
+        thumbnail: 'https://iili.io/fGRf7ON.md.jpg'
+      }
     ]
   },
   {
